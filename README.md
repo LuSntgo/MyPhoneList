@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+<h1 align="center"> MyPhoneList   &nbsp  
+<br>
+  <br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img height="400px" width="800" src="https://i.ibb.co/DMTFmq4/myphonelist.gif">
+</h1>
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+The MyPhoneList is a web application that aims to keep your contacts, allows you to save, edit and delete contacts already registered..
 
-### `npm start`
+<div align="center">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![GitHub Org's stars](https://img.shields.io/github/stars/lusntgo?style=social)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+</div>
 
-### `npm test`
+## :hammer: Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+:ballot_box_with_check: `Sign Up` - Receives username, avatar, email and password.
 
-### `npm run build`
+:ballot_box_with_check: `Login` - Receives email and password.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+:ballot_box_with_check: `Add contact` - Create a new contact and list all contacts. Allows: Name, phone, avatar and email.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+:ballot_box_with_check: `Delete contact` - Delete an existing contact.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+:ballot_box_with_check: `Edit contact` - Edit an existing contact and allow data exchange, then update the list with all contacts.
 
-### `npm run eject`
+## :woman_technologist: Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## :tada: How to run
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### requirements:
 
-## Learn More
+Before starting, you'll need to have the following tools installed on your machine:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Node.js](https://nodejs.org/en/),
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Clone this repo
+$ git clone <https://github.com/LuSntgo/MyPhoneLis>
 
-### Code Splitting
+# #change to project directory
+$ cd ChatUol-api
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# install the dependencies
+$ npm or yarn install
 
-### Analyzing the Bundle Size
+# to run in dev
+$ node src/index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# The server will start on port:5000 - go to <http://localhost:5000>
+```
 
-### Making a Progressive Web App
+## :sparkles: Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[<img align="center" src="https://avatars.githubusercontent.com/lusntgo" width=115><br><sub>Luiza Santiago</sub>](https://github.com/lusntgo)

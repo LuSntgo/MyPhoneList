@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway";
+  color: white;
+}
+.root {
+  min-height: 100vh;
+  background: rgb(255, 236, 190);
+  background: linear-gradient(
+    313deg,
+    rgba(255, 236, 190, 1) 0%,
+    rgba(255, 187, 187, 1) 40%,
+    rgba(237, 201, 198, 1) 71%,
+    rgba(194, 234, 223, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-<h1 align="center"> MyPhoneList   &nbsp  
+<h1 align="center">  :sparkles: MyPhoneList  :sparkles:  &nbsp  
 <br>
   <br>
 
@@ -51,7 +51,7 @@ Before starting, you'll need to have the following tools installed on your machi
 $ git clone <https://github.com/LuSntgo/MyPhoneLis>
 
 # #change to project directory
-$ cd ChatUol-api
+$ cd MyPhoneList
 
 # install the dependencies
 $ npm or yarn install

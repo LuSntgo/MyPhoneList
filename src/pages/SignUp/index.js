@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
+import ToastAnimated, { showToast } from "../../components/ui-lib";
 import api from "../../services/api";
 import {
   Container,
@@ -9,9 +10,11 @@ import {
   Button,
   StyledLink,
 } from "../../components/FormComponents";
+import Loading from "../../components/Loading";
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,30 +28,37 @@ export default function SignUp() {
   }
 
   async function handleSubmit(e) {
+    setIsLoading(true);
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("As senhas devem ser iguais");
+      setIsLoading(false);
+      showToast({
+        type: "warn",
+        message: "Ops! As senhas devem ser iguais!",
+      });
       return;
     }
     const user = { ...formData };
-    console.log(user.avatar);
     delete user.confirmPassword;
 
     try {
       await api.signUp(user);
       navigate("/");
     } catch (error) {
-      console.log(error);
-      alert("Erro, tente novamente");
+      setIsLoading(false);
+      showToast({
+        type: "error",
+        message: "Ops! Confira os dados e tente novamente",
+      });
     }
   }
 
   return (
     <>
       <Container>
+        <ToastAnimated />
         <Logo />
-
         <Form onSubmit={handleSubmit}>
           <Input
             placeholder="Nome"
@@ -90,7 +100,10 @@ export default function SignUp() {
             value={formData.confirmPassword}
             required
           />
-          <Button type="submit">Cadastre</Button>
+          <Button disable={isLoading} type="submit">
+            {" "}
+            {isLoading ? <Loading /> : "Cadastre"}
+          </Button>
         </Form>
         <StyledLink to="/">Já tem uma conta? Entre agora!</StyledLink>
       </Container>

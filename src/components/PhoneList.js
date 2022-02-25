@@ -135,7 +135,7 @@ export const Modal = ({ showModal, setShowModal }) => {
   }, [keyPress]);
 
   const { selected } = useContext(UserContext);
-  console.log(selected);
+
   return (
     <>
       {showModal ? (

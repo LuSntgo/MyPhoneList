@@ -56,6 +56,8 @@ const Button = styled.button`
   box-sizing: border-box;
   cursor: pointer;
   width: 100%;
+  display: flex;
+  justify-content: center;
 
   font-size: 20px;
   font-style: normal;

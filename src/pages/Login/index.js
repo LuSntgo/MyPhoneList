@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import Logo from "../../components/Logo";
+import ToastAnimated, { showToast } from "../../components/ui-lib";
 import api from "../../services/api";
 import {
   Container,
@@ -10,6 +11,7 @@ import {
 } from "../../components/FormComponents";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../context/userContext";
+import Loading from "../../components/Loading";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -17,6 +19,7 @@ export default function Login() {
     password: "",
   });
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const { setUser, setAvatar, setToken } = useContext(UserContext);
 
   function handleLogin({ target }) {
@@ -24,6 +27,7 @@ export default function Login() {
   }
 
   async function handleSubmit(e) {
+    setIsLoading(true);
     e.preventDefault();
     const user = { ...formData };
 
@@ -35,16 +39,19 @@ export default function Login() {
       setUser(data.name);
       navigate("/home");
     } catch (error) {
-      console.log(error);
-      alert("Erro, tente novamente");
+      setIsLoading(false);
+      showToast({
+        type: "error",
+        message: "Ops! Confira os dados e tente novamente",
+      });
     }
   }
 
   return (
     <>
       <Container>
+        <ToastAnimated />
         <Logo />
-
         <Form onSubmit={handleSubmit}>
           <Input
             placeholder="E-mail"
@@ -62,7 +69,10 @@ export default function Login() {
             value={formData.password}
             required
           />
-          <Button type="submit">Entrar</Button>
+          <Button disable={isLoading} type="submit">
+            {" "}
+            {isLoading ? <Loading /> : "Entrar"}
+          </Button>
         </Form>
         <StyledLink to="/sign-up">Primeira vez? Cadastre-se!</StyledLink>
       </Container>

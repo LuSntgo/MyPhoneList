@@ -1,12 +1,15 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "./style";
+import ToastAnimated, { showToast } from "../../components/ui-lib";
 import { Button, Input } from "../../components/FormComponents";
 import api from "../../services/api";
 import UserContext from "../../context/userContext";
+import Loading from "../../components/Loading";
 
 export default function AddContact() {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const { user, token } = useContext(UserContext);
   const [formData, setFormData] = useState({
     name: "",
@@ -21,6 +24,7 @@ export default function AddContact() {
   }
 
   async function handleContact(e) {
+    setIsLoading(true);
     e.preventDefault();
     const contact = { ...formData };
 
@@ -28,15 +32,20 @@ export default function AddContact() {
       await api.addContact(contact);
 
       setFormData(contact);
+
       navigate("/home");
     } catch (error) {
-      console.log(error);
-      alert("Erro, tente novamente");
+      setIsLoading(false);
+      showToast({
+        type: "error",
+        message: "Ops! Confira os dados e tente novamente",
+      });
     }
   }
 
   return (
     <Container>
+      <ToastAnimated />
       <form onSubmit={handleContact}>
         <Input
           name="name"
@@ -66,7 +75,9 @@ export default function AddContact() {
           value={formData.avatar}
           placeholder="Avatar"
         ></Input>
-        <Button type="submit">Salvar</Button>
+        <Button disable={isLoading} type="submit">
+          {isLoading ? <Loading /> : "Salvar"}
+        </Button>
       </form>
     </Container>
   );

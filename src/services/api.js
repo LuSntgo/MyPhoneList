@@ -39,7 +39,6 @@ async function deleteContact(id, token) {
 }
 
 async function updateContact(body, id) {
-  console.log(id);
   const promise = await axios.put(
     `${process.env.REACT_APP_API}/home/${id}`,
     body

@@ -1,16 +1,14 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "./style";
 import ToastAnimated, { showToast } from "../../components/ui-lib";
 import { Button, Input } from "../../components/FormComponents";
 import api from "../../services/api";
-import UserContext from "../../context/userContext";
 import Loading from "../../components/Loading";
 
 export default function AddContact() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const { user, token } = useContext(UserContext);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -30,9 +28,7 @@ export default function AddContact() {
 
     try {
       await api.addContact(contact);
-
       setFormData(contact);
-
       navigate("/home");
     } catch (error) {
       setIsLoading(false);

@@ -20,6 +20,7 @@ export default function HomePage() {
 
   useEffect(() => {
     renderHomePage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {}, [formData]);
@@ -57,7 +58,7 @@ export default function HomePage() {
             <User>
               <MiniLogo />
               <h1 className="username"> Olá, {user}!</h1>
-              <img className="user-avatar" src={avatar}></img>
+              <img className="user-avatar" src={avatar} alt="user-avatar"></img>
             </User>
             <div className="center">
               <span>Não há registros na sua lista telefônica 😔</span>
@@ -77,7 +78,7 @@ export default function HomePage() {
             <User>
               <MiniLogo />
               <h1 className="username"> Olá {user}</h1>
-              <img className="user-avatar" src={avatar}></img>
+              <img className="user-avatar" src={avatar} alt="user-avatar"></img>
             </User>
             <List>
               {formData.map((c) => (

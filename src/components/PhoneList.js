@@ -78,13 +78,13 @@ const ModalContent = styled.div`
   }
 
   .name {
-    width: 20%;
+    min-width: 20%;
   }
   .email {
-    width: 20%;
+    min-width: 20%;
   }
   .number {
-    width: 20%;
+    min-width: 20%;
   }
   span {
     margin-right: 30px;
@@ -151,7 +151,7 @@ export const Modal = ({ showModal, setShowModal }) => {
                 <div className="contact-data">
                   <span className="name">Nome: {selected.name} </span>
                   <span className="number">Telefone: {selected.phone}</span>
-                  <span className="email">E-mail:{selected.email}</span>
+                  <span className="email">E-mail: {selected.email}</span>
                 </div>
                 <StyledLink to={`/editContact/${selected._id}`}>
                   Editar contato

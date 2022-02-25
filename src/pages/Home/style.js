@@ -101,7 +101,7 @@ const List = styled.ul`
   .icon {
     display: flex;
     font-size: 20px;
-    color: black;
+    color: #8e6d9f;
   }
   .avatar {
     width: 40px;
@@ -111,7 +111,7 @@ const List = styled.ul`
 
   li {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     max-width: 90%;
     min-width: 90%;
@@ -122,6 +122,12 @@ const List = styled.ul`
     margin: 5px;
     color: white;
     flex-shrink: 0;
+
+    .name,
+    .number,
+    .email {
+      min-width: 20%;
+    }
   }
 `;
 const StyledLink = styled(Link)`

@@ -6,7 +6,7 @@ function addConfig(token) {
 }
 
 async function signUp(user) {
-  await axios.post(`${process.env.REACT_APP_APII}/sign-up`, user);
+  await axios.post(`${process.env.REACT_APP_API}/sign-up`, user);
 }
 async function login(data) {
   const promise = await axios.post(`${process.env.REACT_APP_API}/login`, data);
